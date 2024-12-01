@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NoneBot 网站增强
 // @namespace    https://github.com/KomoriDev/nonebot-website-tweaker
-// @version      0.1.0
+// @version      0.1.1
 // @description  为 NoneBot 网站提供额外功能
 // @author       Komorebi
 // @license      MIT
