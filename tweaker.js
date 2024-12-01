@@ -75,6 +75,8 @@
         jumpContainer.appendChild(button);
         paginationNav.appendChild(separator);
         paginationNav.appendChild(jumpContainer);
+
+        document.addEventListener('keydown', handleKeyNavigation);
     }
 
     function getTotalPages() {
@@ -98,6 +100,24 @@
             pageButtons[targetIndex].click();
         } else {
             alert('未找到对应页码按钮！');
+        }
+    }
+
+    function handleKeyNavigation(event) {
+        const currentActivePage = document.querySelector('li.paginate-button.active');
+        if (!currentActivePage) return;
+
+        const currentPageNumber = parseInt(currentActivePage.textContent);
+        const totalPages = getTotalPages();
+
+        if (event.key === 'ArrowRight') {
+            if (currentPageNumber < totalPages) {
+                goToPage(currentPageNumber + 1);
+            }
+        } else if (event.key === 'ArrowLeft') {
+            if (currentPageNumber > 1) {
+                goToPage(currentPageNumber - 1);
+            }
         }
     }
 
